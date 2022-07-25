@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dome/PersonalCard.dart';
 
 import 'NewRoute.dart';
 import 'TipRoute.dart';
@@ -25,10 +26,12 @@ class MyApp extends StatelessWidget {
         // home: ButtonWidget());
         // home: ContainerWidget());
         // home: RowAndColumWidget());
-        home: FlexWidget());
+        // home: FlexWidget());
+        home: PersonalCard());
   }
 }
 
+//弹性小部件
 class FlexWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
