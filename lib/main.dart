@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dome/ListViewDome.dart';
 import 'package:flutter_dome/PersonalCard.dart';
 
 import 'NewRoute.dart';
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
         // home: ContainerWidget());
         // home: RowAndColumWidget());
         // home: FlexWidget());
-        home: PersonalCard());
+        // home: PersonalCard());
+        home: ListViewDome());
   }
 }
 
