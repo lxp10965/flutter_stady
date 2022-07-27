@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dome/ListViewDome.dart';
-import 'package:flutter_dome/PersonalCard.dart';
+// import 'package:flutter_dome/PersonalCard.dart
+
+import 'package:flutter_dome/page/choose_location.dart';
+import 'package:flutter_dome/page/home.dart';
+import 'package:flutter_dome/page/loading.dart';
 
 import 'NewRoute.dart';
 import 'TipRoute.dart';
@@ -16,10 +20,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.green,
-        ),
+        // title: 'Flutter Demo',
+        // theme: ThemeData(
+        //   primarySwatch: Colors.green,
+        // ),
         // home: const MyHomePage(title: 'Flutter Demo Home Page'),
         // home: RouterTestRoute(),
         //   home: TextWidget()
@@ -29,7 +33,15 @@ class MyApp extends StatelessWidget {
         // home: RowAndColumWidget());
         // home: FlexWidget());
         // home: PersonalCard());
-        home: ListViewDome());
+        // home: ListViewDome());
+
+        //定义路由
+        initialRoute: '/home',
+        routes: {
+          "/": (context) => Loading(),
+          "/home": (context) => Home(),
+          "/location": (context) => ChooseLocation()
+        });
   }
 }
 

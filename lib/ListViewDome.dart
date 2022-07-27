@@ -21,16 +21,15 @@ class _ListViewDomeState extends State<ListViewDome> {
     Datas(text: "hello flutter", author: "阿里巴巴"),
     Datas(text: "hello missyou", author: "米修在线"),
     Datas(text: "hello missyou", author: "米修在线"),
-    Datas(text: "hello missyou", author: "米修在线"),
-    Datas(text: "hello missyou", author: "米修在线"),
   ];
 
-  Widget dataTemplate(data) {
-    return DataCardWidget(data);
-  }
+  // Widget dataTemplate(data) {
+  //   return DataCardWidget(data);
+  // }
 
   @override
   Widget build(BuildContext context) {
+    print("build");
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -48,7 +47,17 @@ class _ListViewDomeState extends State<ListViewDome> {
 
               // children: datas.map((data) => Text(data)).toList()
               // children: datas.map((data) => Text('${data.author} : ${data.text}')).toList()
-              children: datas.map((data) => dataTemplate(data)).toList()
+              children: datas
+                  .map((data) => DataCardWidget(
+                        data,
+                        delete: () {
+                          setState(() {
+                            print(data.text);
+                            datas.remove(data);
+                          });
+                        },
+                      ))
+                  .toList()
               // children: <Widget>[
               //   Text("hello world"),
               //   Text("hello flutter"),

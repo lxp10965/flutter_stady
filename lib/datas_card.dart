@@ -3,12 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dome/data/datas.dart';
 
 class DataCardWidget extends StatelessWidget {
-  Datas data;
+  final Datas data;
+  final Function delete;
 
-  DataCardWidget(
-    this.data, {
-    Key? key,
-  }) : super(key: key);
+  const DataCardWidget(this.data, {required this.delete, Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +27,14 @@ class DataCardWidget extends StatelessWidget {
             Text(
               data.author,
               style: TextStyle(fontSize: 14.0, color: Colors.grey[800]),
-            )
+            ),
+            SizedBox(height: 8.0),
+            FlatButton.icon(
+                onPressed: () {
+                  delete();
+                },
+                label: Text('删除'),
+                icon: Icon(Icons.delete))
           ],
         ),
       ),
