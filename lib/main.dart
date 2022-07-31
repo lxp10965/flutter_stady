@@ -36,11 +36,11 @@ class MyApp extends StatelessWidget {
         // home: ListViewDome());
 
         //定义路由
-        initialRoute: '/home',
+        initialRoute: '/',
         routes: {
-          "/": (context) => Loading(),
-          "/home": (context) => Home(),
-          "/location": (context) => ChooseLocation()
+          "/": (context) => const Loading(),
+          "/home": (context) => const Home(),
+          "/location": (context) => const ChooseLocation()
         });
   }
 }
